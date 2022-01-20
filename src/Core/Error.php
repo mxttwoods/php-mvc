@@ -7,8 +7,6 @@ use ErrorException;
 
 /**
  * Error and exception handler
- *
- * PHP version 7.0
  */
 class Error
 {
@@ -19,7 +17,6 @@ class Error
      * @param string $message Error message
      * @param string $file Filename the error was raised in
      * @param int $line Line number in the file
-     *
      * @return void
      * @throws ErrorException
      */
@@ -34,7 +31,6 @@ class Error
      * Exception handler.
      *
      * @param Exception $exception The exception
-     *
      * @return void
      */
     public static function exceptionHandler(Exception $exception)

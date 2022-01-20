@@ -6,13 +6,12 @@ use Exception;
 
 /**
  * Base controller
- *
- * PHP version 7.0
  */
 abstract class Controller
 {
     /**
      * Parameters from the matched route
+     *
      * @var array
      */
     protected array $route_params = [];
@@ -21,7 +20,6 @@ abstract class Controller
      * Class constructor
      *
      * @param array $route_params Parameters from the route
-     *
      * @return void
      */
     public function __construct(array $route_params)
@@ -37,7 +35,6 @@ abstract class Controller
      *
      * @param string $name Method name
      * @param array $args Arguments passed to the method
-     *
      * @return void
      * @throws Exception
      */

@@ -11,8 +11,6 @@ use Twig\Loader\FilesystemLoader;
 
 /**
  * View
- *
- * PHP version 7.0
  */
 class View
 {
@@ -21,7 +19,6 @@ class View
      *
      * @param string $view The view file
      * @param array $args Associative array of data to display in the view (optional)
-     *
      * @return void
      * @throws Exception
      */
@@ -43,7 +40,6 @@ class View
      *
      * @param string $template The template file
      * @param array $args Associative array of data to display in the view (optional)
-     *
      * @return void
      */
     public static function renderTemplate(string $template, array $args = [])
@@ -58,8 +54,11 @@ class View
         try {
             echo $twig->render($template, $args);
         } catch (LoaderError $e) {
+            echo $e;
         } catch (RuntimeError $e) {
+            echo $e;
         } catch (SyntaxError $e) {
+            echo $e;
         }
     }
 }

@@ -7,8 +7,6 @@ use PDO;
 
 /**
  * Base model
- *
- * PHP version 7.0
  */
 abstract class Model
 {

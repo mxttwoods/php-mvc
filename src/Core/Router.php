@@ -6,19 +6,19 @@ use Exception;
 
 /**
  * Router
- *
- * PHP version 7.0
  */
 class Router
 {
     /**
      * Associative array of routes (the routing table)
+     *
      * @var array
      */
     protected array $routes = [];
 
     /**
      * Parameters from the matched route
+     *
      * @var array
      */
     protected array $params = [];
@@ -28,7 +28,6 @@ class Router
      *
      * @param string $route The route URL
      * @param array $params Parameters (controller, action, etc.)
-     *
      * @return void
      */
     public function add(string $route, array $params = [])
@@ -73,7 +72,6 @@ class Router
      * action method
      *
      * @param string $url The route URL
-     *
      * @return void
      * @throws Exception
      */
@@ -125,7 +123,6 @@ class Router
      * it's passed through to the $_SERVER variable).
      *
      * @param string $url The full URL
-     *
      * @return string The URL with the query string variables removed
      */
     protected function removeQueryStringVariables(string $url): string
@@ -148,7 +145,6 @@ class Router
      * property if a route is found.
      *
      * @param string $url The route URL
-     *
      * @return boolean  true if a match found, false otherwise
      */
     public function match(string $url): bool
@@ -175,7 +171,6 @@ class Router
      * e.g. post-authors => PostAuthors
      *
      * @param string $string The string to convert
-     *
      * @return string
      */
     protected function convertToStudlyCaps(string $string): string
@@ -205,7 +200,6 @@ class Router
      * e.g. add-new => addNew
      *
      * @param string $string The string to convert
-     *
      * @return string
      */
     protected function convertToCamelCase(string $string): string

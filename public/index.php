@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Front controller
- *
- * PHP version 7.0
- */
-
-/**
- * Composer
- */
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 
