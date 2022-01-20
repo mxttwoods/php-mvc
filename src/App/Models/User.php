@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Core\Model;
 use PDO;
 
 /**
@@ -9,15 +10,14 @@ use PDO;
  *
  * PHP version 7.0
  */
-class User extends \Core\Model
+class User extends Model
 {
-
     /**
      * Get all the users as an associative array
      *
      * @return array
      */
-    public static function getAll()
+    public static function getAll(): array
     {
         $db = static::getDB();
         $stmt = $db->query('SELECT id, name FROM users');

@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Exception;
+
 /**
  * Base controller
  *
@@ -9,21 +11,20 @@ namespace Core;
  */
 abstract class Controller
 {
-
     /**
      * Parameters from the matched route
      * @var array
      */
-    protected $route_params = [];
+    protected array $route_params = [];
 
     /**
      * Class constructor
      *
-     * @param array $route_params  Parameters from the route
+     * @param array $route_params Parameters from the route
      *
      * @return void
      */
-    public function __construct($route_params)
+    public function __construct(array $route_params)
     {
         $this->route_params = $route_params;
     }
@@ -34,12 +35,13 @@ abstract class Controller
      * filter methods on action methods. Action methods need to be named
      * with an "Action" suffix, e.g. indexAction, showAction etc.
      *
-     * @param string $name  Method name
+     * @param string $name Method name
      * @param array $args Arguments passed to the method
      *
      * @return void
+     * @throws Exception
      */
-    public function __call($name, $args)
+    public function __call(string $name, array $args)
     {
         $method = $name . 'Action';
 
@@ -49,7 +51,7 @@ abstract class Controller
                 $this->after();
             }
         } else {
-            throw new \Exception("Method $method not found in controller " . get_class($this));
+            throw new Exception("Method $method not found in controller " . get_class($this));
         }
     }
 
