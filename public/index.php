@@ -32,4 +32,5 @@ $router->add('{controller}/{action}');
 try {
     $router->dispatch($_SERVER['QUERY_STRING']);
 } catch (Exception $e) {
+    echo $e;
 }
